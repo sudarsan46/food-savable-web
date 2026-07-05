@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FoodSaver</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">🍱 FoodSaver</div>
+    <div id="nav-user"></div>
+</header>
+
+<!-- AUTH -->
+<div id="auth-section" class="auth-wrapper">
+
+    <div class="auth-left">
+        <h1>Save Food, Save Lives</h1>
+        <p>Connect with nearby providers and reduce food waste easily.</p>
+
+        <div class="hero-badges">
+            <span>⚡ Fast Access</span>
+            <span>💰 Affordable</span>
+            <span>♻️ Eco Friendly</span>
+        </div>
+    </div>
+
+    <div class="auth-right">
+        <div class="auth-card">
+
+            <h2>Login</h2>
+            <input id="login-email" placeholder="Email">
+            <input id="login-pass" type="password" placeholder="Password">
+            <button onclick="login()" class="btn primary">Login</button>
+
+            <div class="divider">OR</div>
+
+            <h2>Create Account</h2>
+            <input id="reg-name" placeholder="Full Name">
+            <input id="reg-email" placeholder="Email">
+            <input id="reg-pass" type="password" placeholder="Password">
+
+            <select id="reg-role">
+                <option value="USER">User</option>
+                <option value="PROVIDER">Provider</option>
+            </select>
+
+            <button onclick="register()" class="btn secondary">Register</button>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" style="display:none;" class="dashboard">
+
+    <!-- HEADER -->
+    <div class="dash-header">
+        <h2>Welcome 👋</h2>
+        <p>Manage food & orders in one place</p>
+    </div>
+
+    <!-- PROVIDER -->
+    <div id="provider-section" style="display:none;" class="dash-section">
+
+        <div class="card glass">
+            <h3>🍱 Add Surplus Food</h3>
+
+            <div class="form-grid">
+                <input id="food-name" placeholder="Food Name">
+                <input id="food-qty" type="number" placeholder="Quantity">
+                <input id="food-price" type="number" placeholder="Price (₹)">
+                <input id="food-loc" placeholder="Pickup Location">
+            </div>
+
+            <button onclick="addFood()" class="btn primary full">Add Food</button>
+        </div>
+
+        <h3 class="section-title">📦 Incoming Requests</h3>
+        <div id="provider-orders" class="grid"></div>
+
+    </div>
+
+    <!-- USER -->
+    <div id="user-section" style="display:none;" class="dash-section">
+
+        <h3 class="section-title">🍽 Available Food Near You</h3>
+
+        <!-- FOOD LIST (CARDS WILL LOAD HERE) -->
+        <div id="food-list" class="grid"></div>
+
+        <h3 class="section-title">🧾 My Orders</h3>
+        <div id="user-orders" class="grid"></div>
+
+    </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+
+        <h3>Save Food</h3>
+        <p class="modal-subtext">Confirm quantity to save this food item</p>
+
+        <input id="qty" type="number" value="1">
+
+        <button onclick="placeOrder()" class="btn primary">Confirm</button>
+        <button onclick="closeModal()" class="btn danger">Cancel</button>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
